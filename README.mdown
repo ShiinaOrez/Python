@@ -1,0 +1,6 @@
+#这里是ShiinaOrez的Python练习
+
+##**分为两部分**
+
+> * Python语法的小练习
+> * Python OOP （面向对象编程）的练习
