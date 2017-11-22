@@ -1,4 +1,3 @@
-#根据指定日期打印
 months=['January',
         'February',
         'March',
