@@ -2,7 +2,7 @@ def log():
         def decorate(func):
                 def wrapper(*args,**kw):
                         print('here is going to using a function!')
-                        return func(*args,**kw)
+                        return func(*args,**kwargs)
                 return wrapper
         print('function is over!')
         return decorate
