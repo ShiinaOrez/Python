@@ -1,9 +1,8 @@
 import requests
-from spoc_test import connect
 from pprint import pprint
 
-USERNAME = "2017211712"
-PASSWORD = "2017211712"
+USERNAME = "Your username"
+PASSWORD = "Your password"
 
 HEADER = {
     "Accept": "application/json, text/javascript, */*; q=0.01",
@@ -12,14 +11,12 @@ HEADER = {
     "Access-Control-Allow-Headers": "X-Requested-With",
     "Host": "spoc.ccnu.edu.cn",
     "Content-Type": "application/json",
-
     "Origin": "http://spoc.ccnu.edu.cn",
     "Referer": "http://spoc.ccnu.edu.cn/studentHomepage",
     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.92 Safari/537.36",
 }
 
 LOGIN = [
-#    "http://spoc.ccnu.edu.cn/userLoginController/checkLogin",
     "http://spoc.ccnu.edu.cn/userLoginController/getUserProfile",
     "http://spoc.ccnu.edu.cn/userInfo/getUserInfo",
 ]
@@ -55,27 +52,11 @@ def get_class(session, userId):
     pprint(response.json())
 
 def login_once():
-    code = ""
     session = requests.Session()
     response = session.get("http://spoc.ccnu.edu.cn/userLoginController/getVerifCode")
-#    print(session.cookies)
-#    q = response.json().get("data")
-#    result = connect(q)
-#    print(result)
-#    for reg in result.get("Result").get("regions"):
-#        for line in reg.get("lines"):
-#            for w in line.get("words"):
-#                if w.get("word") is not None:
-#                    code = w.get("word")
-#                    print(code)
-#                    break
-#    if len(code) < 4:
-#        print("[log]Length too Short!")
-
     payload = {
         "loginName": USERNAME,
         "password": PASSWORD,
-#        "verifCode": code
     }
     for url in LOGIN:
         response = session.post(url, data=payload)

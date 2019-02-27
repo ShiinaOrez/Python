@@ -5,8 +5,8 @@ import hashlib
 import time
 
 YOUDAO_URL = 'https://openapi.youdao.com/ocrapi'
-APP_KEY = '...'
-APP_SECRET = '...'
+APP_KEY = '4395adc42a2f776e'
+APP_SECRET = 'HfjZbaBTef0S3BULBNIYWBWy35RyZUlP'
 
 
 def truncate(q):
